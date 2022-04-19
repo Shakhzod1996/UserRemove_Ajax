@@ -41,7 +41,10 @@ fetch('https://reqres.in/api/users')
   </li>
     `;
     });
+    removeFunc(datas.data)
+  })
 
+  function removeFunc(params) {
     let removeBtns = document.querySelectorAll('.remove-btn')
     let li = document.querySelectorAll('.li')
   
@@ -54,16 +57,6 @@ fetch('https://reqres.in/api/users')
         })
       })
     })
-  })
-
-
-
-
-
-    
-
-
-  
-
+  }
 
 
