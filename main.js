@@ -41,10 +41,10 @@ fetch('https://reqres.in/api/users')
   </li>
     `;
     });
+
     let removeBtns = document.querySelectorAll('.remove-btn')
     let li = document.querySelectorAll('.li')
-
-
+  
     removeBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         li.forEach(element => {
@@ -55,6 +55,7 @@ fetch('https://reqres.in/api/users')
       })
     })
   })
+
 
 
 
