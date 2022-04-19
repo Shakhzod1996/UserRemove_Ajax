@@ -1,15 +1,10 @@
 let ulContainer = document.querySelector(".ul");
 
-  let xhr = new XMLHttpRequest();
-  let link = "https://reqres.in/api/users";
 
-  xhr.open("GET", link);
-
-  xhr.onload = function () {
-    let data = xhr.responseText;
-    let condertToObj = JSON.parse(data);
-
-    condertToObj.data.forEach((element) => {
+fetch('https://reqres.in/api/users')
+  .then((res) => res.json())
+  .then((datas) => {
+    datas.data.forEach((element) => {
       ulContainer.innerHTML += `
     <li class="li li-1" id=id${element.id}>
     <div class="head">
@@ -46,7 +41,6 @@ let ulContainer = document.querySelector(".ul");
   </li>
     `;
     });
-
     let removeBtns = document.querySelectorAll('.remove-btn')
     let li = document.querySelectorAll('.li')
 
@@ -60,10 +54,15 @@ let ulContainer = document.querySelector(".ul");
         })
       })
     })
-};
+  })
+
+
+
+
+    
+
+
   
 
-
-  xhr.send();
 
 
